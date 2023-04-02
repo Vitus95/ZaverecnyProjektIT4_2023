@@ -27,10 +27,11 @@ namespace ZaverecnyProjektIT4_2023_Nemec
 
         private void btnPrihlasit_Click(object sender, EventArgs e)
         {
-            String username, user_password;
+            String username, user_password, role;
 
             username = txtUsername.Text;
             user_password = txtPassword.Text;
+            
 
             try 
             {
@@ -39,6 +40,7 @@ namespace ZaverecnyProjektIT4_2023_Nemec
 
                 DataTable dtTable = new DataTable();
                 sda.Fill(dtTable);
+
 
                 if(dtTable.Rows.Count > 0)
                 {
