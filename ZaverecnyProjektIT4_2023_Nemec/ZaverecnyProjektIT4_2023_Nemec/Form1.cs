@@ -31,6 +31,8 @@ namespace ZaverecnyProjektIT4_2023_Nemec
             con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Employees;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             con.Open ();
             GetAllEmployeeRecord();
+            GetAllUserRecord();
+            GetAllPraceRecord();
         }
 
         private void GetAllEmployeeRecord()
@@ -123,13 +125,100 @@ namespace ZaverecnyProjektIT4_2023_Nemec
         }
         private void GetAllUserRecord()
         {
-            cmd = new SqlCommand("Select * FROM Zamestnanci", con);
+            cmd = new SqlCommand("Select Username, Role, ZamID FROM Users", con);
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataZamestnanci.DataSource = dt;
+            dataUser.DataSource = dt;
 
 
+        }
+        private void GetAllPraceRecord()
+        {
+            cmd = new SqlCommand("Select * FROM Prace", con);
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataPrace.DataSource = dt;
+
+
+        }
+        protected void SaveInfo2()
+        {
+            string QUERY = "INSERT INTO Prace " +
+            "(IdContract, Customer, Name, Description, Employee, Hours) " +
+            "VALUES (@IdContract , @Customer, @Name, @Description, @Employee, @Hours)";
+
+            SqlCommand CMD = new SqlCommand(QUERY, con);
+            CMD.Parameters.AddWithValue("@IdContract", txtIdContract.Text);
+            CMD.Parameters.AddWithValue("@Customer", txtCustomer.Text);
+            CMD.Parameters.AddWithValue("@Name", txtName.Text);
+            CMD.Parameters.AddWithValue("@Description", txtDescription.Text);
+            CMD.Parameters.AddWithValue("@Employee", txtEmployee.Text);
+            CMD.Parameters.AddWithValue("@Hours", txtHours.Text);
+            CMD.ExecuteNonQuery();
+        }
+        protected void UpdateInfo2()
+        {
+            string QUERY = "Update Prace " +
+            "Set Customer = @Customer, Name = @Name, Description = @Description, Employee = @Employee, Hours = @Hours " +
+            "where IdContract = @IdContract";
+
+            SqlCommand CMD = new SqlCommand(QUERY, con);
+            CMD.Parameters.AddWithValue("@IdContract", txtIdContract.Text);
+            CMD.Parameters.AddWithValue("@Customer", txtCustomer.Text);
+            CMD.Parameters.AddWithValue("@Name", txtName.Text);
+            CMD.Parameters.AddWithValue("@Description", txtDescription.Text);
+            CMD.Parameters.AddWithValue("@Employee", txtEmployee.Text);
+            CMD.Parameters.AddWithValue("@Hours", txtHours.Text);
+            CMD.ExecuteNonQuery();
+        }
+        protected void DeleteInfo2()
+        {
+            string QUERY = "Delete from Prace " +
+            "where IdContract = @IdContract";
+
+            SqlCommand CMD = new SqlCommand(QUERY, con);
+            CMD.Parameters.AddWithValue("@IdContract", txtIdContract.Text);
+            CMD.ExecuteNonQuery();
+        }
+
+        private void btnNajdiP_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("Select * FROM Prace where IdContract =" + txtIdContract.Text, con);
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataPrace.DataSource = dt;
+
+        }
+
+        private void btnPridatP_Click(object sender, EventArgs e)
+        {
+            if (txtIdContract.Text != "")
+            {
+                SaveInfo2();
+            }
+            else
+            {
+                MessageBox.Show("číslo kotraktu nemá být prázdné.");
+                txtID.Focus();
+            }
+            GetAllPraceRecord();
+
+        }
+
+        private void btnEditujP_Click(object sender, EventArgs e)
+        {
+            UpdateInfo2();
+            GetAllPraceRecord();
+
+        }
+
+        private void btnVymazatP_Click(object sender, EventArgs e)
+        {
+            DeleteInfo2();
+            GetAllPraceRecord() ;
         }
     }
 }

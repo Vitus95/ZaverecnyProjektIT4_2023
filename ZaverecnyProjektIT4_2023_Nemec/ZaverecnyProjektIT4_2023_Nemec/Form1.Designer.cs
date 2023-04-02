@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNajdiZ = new System.Windows.Forms.Button();
@@ -46,9 +47,29 @@
             this.btnPridatZ = new System.Windows.Forms.Button();
             this.txtNarozeni = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.listUser = new System.Windows.Forms.ListView();
             this.label8 = new System.Windows.Forms.Label();
+            this.dataPrace = new System.Windows.Forms.DataGridView();
+            this.txtCustomer = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtEmployee = new System.Windows.Forms.TextBox();
+            this.txtHours = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.btnPridatP = new System.Windows.Forms.Button();
+            this.btnVymazatP = new System.Windows.Forms.Button();
+            this.btnEditujP = new System.Windows.Forms.Button();
+            this.dataUser = new System.Windows.Forms.DataGridView();
+            this.txtIdContract = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btnNajdiP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataZamestnanci)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPrace)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataUser)).BeginInit();
             this.SuspendLayout();
             // 
             // txtID
@@ -225,15 +246,6 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Admin Panel";
             // 
-            // listUser
-            // 
-            this.listUser.HideSelection = false;
-            this.listUser.Location = new System.Drawing.Point(17, 396);
-            this.listUser.Name = "listUser";
-            this.listUser.Size = new System.Drawing.Size(175, 203);
-            this.listUser.TabIndex = 33;
-            this.listUser.UseCompatibleStateImageBehavior = false;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -244,13 +256,187 @@
             this.label8.TabIndex = 34;
             this.label8.Text = "Uživatelé";
             // 
+            // dataPrace
+            // 
+            this.dataPrace.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPrace.Location = new System.Drawing.Point(504, 396);
+            this.dataPrace.Name = "dataPrace";
+            this.dataPrace.Size = new System.Drawing.Size(651, 203);
+            this.dataPrace.TabIndex = 35;
+            // 
+            // txtCustomer
+            // 
+            this.txtCustomer.Location = new System.Drawing.Point(398, 436);
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(100, 20);
+            this.txtCustomer.TabIndex = 36;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(336, 439);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Zákazník";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(398, 462);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 20);
+            this.txtName.TabIndex = 39;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(399, 488);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(100, 20);
+            this.txtDescription.TabIndex = 40;
+            // 
+            // txtEmployee
+            // 
+            this.txtEmployee.Location = new System.Drawing.Point(398, 514);
+            this.txtEmployee.Name = "txtEmployee";
+            this.txtEmployee.Size = new System.Drawing.Size(100, 20);
+            this.txtEmployee.TabIndex = 41;
+            // 
+            // txtHours
+            // 
+            this.txtHours.Location = new System.Drawing.Point(398, 540);
+            this.txtHours.Name = "txtHours";
+            this.txtHours.Size = new System.Drawing.Size(100, 20);
+            this.txtHours.TabIndex = 42;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(351, 465);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 43;
+            this.label10.Text = "Jméno";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(359, 491);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(33, 13);
+            this.label11.TabIndex = 44;
+            this.label11.Text = "Popis";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(320, 517);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 13);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Zaměstnanec";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(328, 543);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(64, 13);
+            this.label13.TabIndex = 46;
+            this.label13.Text = "Počet hodin";
+            // 
+            // btnPridatP
+            // 
+            this.btnPridatP.Location = new System.Drawing.Point(354, 566);
+            this.btnPridatP.Name = "btnPridatP";
+            this.btnPridatP.Size = new System.Drawing.Size(52, 23);
+            this.btnPridatP.TabIndex = 47;
+            this.btnPridatP.Text = "Přidat";
+            this.btnPridatP.UseVisualStyleBackColor = true;
+            this.btnPridatP.Click += new System.EventHandler(this.btnPridatP_Click);
+            // 
+            // btnVymazatP
+            // 
+            this.btnVymazatP.Location = new System.Drawing.Point(412, 566);
+            this.btnVymazatP.Name = "btnVymazatP";
+            this.btnVymazatP.Size = new System.Drawing.Size(86, 23);
+            this.btnVymazatP.TabIndex = 48;
+            this.btnVymazatP.Text = "Vymazat";
+            this.btnVymazatP.UseVisualStyleBackColor = true;
+            this.btnVymazatP.Click += new System.EventHandler(this.btnVymazatP_Click);
+            // 
+            // btnEditujP
+            // 
+            this.btnEditujP.Location = new System.Drawing.Point(301, 566);
+            this.btnEditujP.Name = "btnEditujP";
+            this.btnEditujP.Size = new System.Drawing.Size(51, 23);
+            this.btnEditujP.TabIndex = 49;
+            this.btnEditujP.Text = "Edituj";
+            this.btnEditujP.UseVisualStyleBackColor = true;
+            this.btnEditujP.Click += new System.EventHandler(this.btnEditujP_Click);
+            // 
+            // dataUser
+            // 
+            this.dataUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataUser.Location = new System.Drawing.Point(17, 396);
+            this.dataUser.Name = "dataUser";
+            this.dataUser.Size = new System.Drawing.Size(175, 203);
+            this.dataUser.TabIndex = 50;
+            // 
+            // txtIdContract
+            // 
+            this.txtIdContract.Location = new System.Drawing.Point(398, 410);
+            this.txtIdContract.Name = "txtIdContract";
+            this.txtIdContract.Size = new System.Drawing.Size(100, 20);
+            this.txtIdContract.TabIndex = 51;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(303, 413);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 13);
+            this.label14.TabIndex = 52;
+            this.label14.Text = "Číslo objednávky";
+            // 
+            // btnNajdiP
+            // 
+            this.btnNajdiP.Location = new System.Drawing.Point(224, 465);
+            this.btnNajdiP.Name = "btnNajdiP";
+            this.btnNajdiP.Size = new System.Drawing.Size(70, 70);
+            this.btnNajdiP.TabIndex = 53;
+            this.btnNajdiP.Text = "Najdi Kontrakt";
+            this.btnNajdiP.UseVisualStyleBackColor = true;
+            this.btnNajdiP.Click += new System.EventHandler(this.btnNajdiP_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 611);
+            this.Controls.Add(this.btnNajdiP);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.txtIdContract);
+            this.Controls.Add(this.dataUser);
+            this.Controls.Add(this.btnEditujP);
+            this.Controls.Add(this.btnVymazatP);
+            this.Controls.Add(this.btnPridatP);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtHours);
+            this.Controls.Add(this.txtEmployee);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtCustomer);
+            this.Controls.Add(this.dataPrace);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.listUser);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNarozeni);
             this.Controls.Add(this.btnPridatZ);
@@ -273,6 +459,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataZamestnanci)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPrace)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,8 +486,26 @@
         private System.Windows.Forms.Button btnPridatZ;
         private System.Windows.Forms.DateTimePicker txtNarozeni;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListView listUser;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dataPrace;
+        private System.Windows.Forms.TextBox txtCustomer;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.TextBox txtEmployee;
+        private System.Windows.Forms.TextBox txtHours;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnPridatP;
+        private System.Windows.Forms.Button btnVymazatP;
+        private System.Windows.Forms.Button btnEditujP;
+        private System.Windows.Forms.DataGridView dataUser;
+        private System.Windows.Forms.TextBox txtIdContract;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btnNajdiP;
     }
 }
 
