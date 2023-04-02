@@ -34,7 +34,7 @@ namespace ZaverecnyProjektIT4_2023_Nemec
 
             try 
             {
-                String querry = "SELECT Username, Password FROM Users WHERE Username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'";
+                String querry = "SELECT * FROM Users WHERE Username = '" + txtUsername.Text + "' AND password = '" + txtPassword.Text + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
                 DataTable dtTable = new DataTable();
