@@ -44,12 +44,24 @@ namespace ZaverecnyProjektIT4_2023_Nemec
 
                 if(dtTable.Rows.Count > 0)
                 {
-                    username = txtUsername.Text;
-                    user_password = txtPassword.Text;
+                    if (user.Role == "admin") { 
+                        username = txtUsername.Text;
+                        user_password = txtPassword.Text;
 
-                    Form1 adminpanel = new Form1();
-                    adminpanel.Show();
-                    this.Hide();
+                        Form1 adminpanel = new Form1();
+                        adminpanel.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        username = txtUsername.Text;
+                        user_password = txtPassword.Text;
+
+                        Uzivatel uzzivatel = new Uzivatel();
+                        uzzivatel.Show();
+                        this.Hide();
+
+                    }
                 }
                 else
                 {
