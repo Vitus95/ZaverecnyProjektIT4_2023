@@ -47,6 +47,7 @@
             this.txtNarozeni = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.listUser = new System.Windows.Forms.ListView();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataZamestnanci)).BeginInit();
             this.SuspendLayout();
             // 
@@ -170,34 +171,41 @@
             // 
             // btnVymazZ
             // 
+            this.btnVymazZ.BackColor = System.Drawing.Color.LightCoral;
+            this.btnVymazZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnVymazZ.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnVymazZ.Location = new System.Drawing.Point(403, 306);
             this.btnVymazZ.Name = "btnVymazZ";
             this.btnVymazZ.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnVymazZ.Size = new System.Drawing.Size(96, 84);
             this.btnVymazZ.TabIndex = 28;
             this.btnVymazZ.Text = "Vymazat";
-            this.btnVymazZ.UseVisualStyleBackColor = true;
+            this.btnVymazZ.UseVisualStyleBackColor = false;
             this.btnVymazZ.Click += new System.EventHandler(this.btnVymazZ_Click);
             // 
             // btnEditujZ
             // 
+            this.btnEditujZ.BackColor = System.Drawing.Color.LightGreen;
+            this.btnEditujZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnEditujZ.Location = new System.Drawing.Point(301, 306);
             this.btnEditujZ.Name = "btnEditujZ";
             this.btnEditujZ.Size = new System.Drawing.Size(96, 84);
             this.btnEditujZ.TabIndex = 29;
             this.btnEditujZ.Text = "Edituj";
-            this.btnEditujZ.UseVisualStyleBackColor = true;
+            this.btnEditujZ.UseVisualStyleBackColor = false;
             this.btnEditujZ.Click += new System.EventHandler(this.btnEditujZ_Click);
             // 
             // btnPridatZ
             // 
+            this.btnPridatZ.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPridatZ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnPridatZ.Location = new System.Drawing.Point(198, 306);
             this.btnPridatZ.Name = "btnPridatZ";
             this.btnPridatZ.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.btnPridatZ.Size = new System.Drawing.Size(96, 84);
             this.btnPridatZ.TabIndex = 30;
             this.btnPridatZ.Text = "Přidat";
-            this.btnPridatZ.UseVisualStyleBackColor = true;
+            this.btnPridatZ.UseVisualStyleBackColor = false;
             this.btnPridatZ.Click += new System.EventHandler(this.btnPridatZ_Click);
             // 
             // txtNarozeni
@@ -211,26 +219,37 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Wide Latin", 39.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(75, 9);
+            this.label7.Location = new System.Drawing.Point(316, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1117, 65);
+            this.label7.Size = new System.Drawing.Size(615, 65);
             this.label7.TabIndex = 32;
-            this.label7.Text = "ARBEIT MACHT FREI";
+            this.label7.Text = "Admin Panel";
             // 
             // listUser
             // 
             this.listUser.HideSelection = false;
-            this.listUser.Location = new System.Drawing.Point(197, 417);
+            this.listUser.Location = new System.Drawing.Point(17, 396);
             this.listUser.Name = "listUser";
-            this.listUser.Size = new System.Drawing.Size(301, 182);
+            this.listUser.Size = new System.Drawing.Size(175, 203);
             this.listUser.TabIndex = 33;
             this.listUser.UseCompatibleStateImageBehavior = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label8.Location = new System.Drawing.Point(21, 362);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(127, 31);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Uživatelé";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 611);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.listUser);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtNarozeni);
@@ -280,6 +299,7 @@
         private System.Windows.Forms.DateTimePicker txtNarozeni;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListView listUser;
+        private System.Windows.Forms.Label label8;
     }
 }
 
