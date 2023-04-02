@@ -27,10 +27,10 @@ namespace ZaverecnyProjektIT4_2023_Nemec
 
         private void btnPrihlasit_Click(object sender, EventArgs e)
         {
-            String username, user_password, role;
+            String username, user_password;
 
-            username = txtUsername.Text;
-            user_password = txtPassword.Text;
+            ///username = txtUsername.Text;
+            ///user_password = txtPassword.Text;
             
 
             try 
@@ -40,27 +40,22 @@ namespace ZaverecnyProjektIT4_2023_Nemec
 
                 DataTable dtTable = new DataTable();
                 sda.Fill(dtTable);
-
-
+                string role = dtTable.Rows[0][3].ToString();
+                username = txtUsername.Text;
+                user_password = txtPassword.Text;
                 if(dtTable.Rows.Count > 0)
                 {
-                    if (user.Role == "admin") { 
-                        username = txtUsername.Text;
-                        user_password = txtPassword.Text;
-
+                    if (role.Contains("admin")) 
+                    {
                         Form1 adminpanel = new Form1();
                         adminpanel.Show();
                         this.Hide();
                     }
-                    else
+                    else if (role.Contains("user"))
                     {
-                        username = txtUsername.Text;
-                        user_password = txtPassword.Text;
-
                         Uzivatel uzzivatel = new Uzivatel();
                         uzzivatel.Show();
                         this.Hide();
-
                     }
                 }
                 else
