@@ -34,9 +34,9 @@
             this.txtIdContract = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHours = new System.Windows.Forms.TextBox();
-            this.dataKotrakty = new System.Windows.Forms.DataGridView();
+            this.dataKontrakty = new System.Windows.Forms.DataGridView();
             this.btnPridejK = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataKotrakty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataKontrakty)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -57,6 +57,7 @@
             this.btnNajitK.TabIndex = 1;
             this.btnNajitK.Text = "Najít číslo Kotraktu";
             this.btnNajitK.UseVisualStyleBackColor = true;
+            this.btnNajitK.Click += new System.EventHandler(this.btnNajitK_Click);
             // 
             // label2
             // 
@@ -94,13 +95,13 @@
             this.txtHours.Size = new System.Drawing.Size(79, 53);
             this.txtHours.TabIndex = 5;
             // 
-            // dataKotrakty
+            // dataKontrakty
             // 
-            this.dataKotrakty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataKotrakty.Location = new System.Drawing.Point(27, 174);
-            this.dataKotrakty.Name = "dataKotrakty";
-            this.dataKotrakty.Size = new System.Drawing.Size(791, 425);
-            this.dataKotrakty.TabIndex = 6;
+            this.dataKontrakty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataKontrakty.Location = new System.Drawing.Point(27, 174);
+            this.dataKontrakty.Name = "dataKontrakty";
+            this.dataKontrakty.Size = new System.Drawing.Size(791, 425);
+            this.dataKontrakty.TabIndex = 6;
             // 
             // btnPridejK
             // 
@@ -111,6 +112,7 @@
             this.btnPridejK.TabIndex = 7;
             this.btnPridejK.Text = "Odeslat";
             this.btnPridejK.UseVisualStyleBackColor = true;
+            this.btnPridejK.Click += new System.EventHandler(this.btnPridejK_Click);
             // 
             // Uzivatel
             // 
@@ -118,7 +120,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1234, 611);
             this.Controls.Add(this.btnPridejK);
-            this.Controls.Add(this.dataKotrakty);
+            this.Controls.Add(this.dataKontrakty);
             this.Controls.Add(this.txtHours);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtIdContract);
@@ -128,7 +130,7 @@
             this.Name = "Uzivatel";
             this.Text = "Uzivatel";
             this.Load += new System.EventHandler(this.Uzivatel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataKotrakty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataKontrakty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +144,7 @@
         private System.Windows.Forms.TextBox txtIdContract;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtHours;
-        private System.Windows.Forms.DataGridView dataKotrakty;
+        private System.Windows.Forms.DataGridView dataKontrakty;
         private System.Windows.Forms.Button btnPridejK;
     }
 }

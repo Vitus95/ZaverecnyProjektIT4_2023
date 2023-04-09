@@ -26,18 +26,45 @@ namespace ZaverecnyProjektIT4_2023_Nemec
         {
             con = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Employees;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
             con.Open();
+            GetAllContractRecord();
 
         }
 
         private void GetAllContractRecord()
         {
-            cmd = new SqlCommand("Select * FROM Zamestnanci", con);
+            cmd = new SqlCommand("Select * FROM Prace", con);
             da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataKotrakty.DataSource = dt;
+            dataKontrakty.DataSource = dt;
 
 
+        }
+        protected void UpdatePrace()
+        {
+            string QUERY = "Update Prace " +
+            "Set Hours = @Hours " +
+            " where IdContract = @IdContract";
+
+            SqlCommand CMD = new SqlCommand(QUERY, con);
+            CMD.Parameters.AddWithValue("@IdContract", txtIdContract.Text);
+            CMD.Parameters.AddWithValue("@Hours", txtHours.Text);
+            CMD.ExecuteNonQuery();
+        }
+
+        private void btnNajitK_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("Select * FROM Prace where IdContract =" + txtIdContract.Text, con);
+            da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataKontrakty.DataSource = dt;
+        }
+
+        private void btnPridejK_Click(object sender, EventArgs e)
+        {
+            UpdatePrace();
+            GetAllContractRecord();
         }
     }
 }
